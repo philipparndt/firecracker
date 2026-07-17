@@ -144,7 +144,7 @@ use crate::devices::virtio::net::Net;
 use crate::devices::virtio::pmem::device::Pmem;
 use crate::devices::virtio::rng::Entropy;
 use crate::devices::virtio::vsock::{Vsock, VsockUnixBackend};
-use crate::logger::{METRICS, MetricsError, log_dev_preview_warning};
+use crate::logger::{METRICS, MetricsError, info, log_dev_preview_warning};
 use crate::mmds::data_store::Mmds;
 use crate::persist::{MicrovmState, MicrovmStateError, VmInfo};
 use crate::rate_limiter::BucketUpdate;
@@ -505,12 +505,17 @@ impl Vmm {
         // might modify the VirtIO transport and send an interrupt to the guest. If we save KVM
         // state before we save device state, that interrupt will never be delivered to the guest
         // upon resuming from the snapshot.
+        info!("save_state phase: device state save start");
         let device_states = self.device_manager.save();
+        info!("save_state phase: device state save done");
         let kvm_vm = self
             .vm
             .as_kvm()
             .ok_or_else(|| MicrovmStateError::NotAllowed("save_state requires KVM".into()))?;
+        info!("save_state phase: vcpu state save start");
         let vcpu_states = kvm_vm.save_vcpu_states()?;
+        info!("save_state phase: vcpu state save done");
+        info!("save_state phase: kvm state save start");
         let kvm_state = kvm_vm.kvm().save_state();
         let vm_state = {
             #[cfg(target_arch = "x86_64")]

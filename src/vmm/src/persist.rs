@@ -171,18 +171,28 @@ pub fn create_snapshot(
     vm_info: &VmInfo,
     params: &CreateSnapshotParams,
 ) -> Result<(), CreateSnapshotError> {
+    // Phase logging: create_snapshot is otherwise silent, so a hang cannot be
+    // localized to a phase. These bracket each blocking step (device+vcpu+kvm
+    // state save, vmstate file write, guest-memory dump) so fc log tails
+    // pinpoint where a stalled snapshot is stuck.
+    info!("snapshot phase: save_state (devices + vcpus + kvm) start");
     let microvm_state = vmm
         .save_state(vm_info)
         .map_err(CreateSnapshotError::MicrovmState)?;
+    info!("snapshot phase: save_state done");
 
+    info!("snapshot phase: write vmstate file start");
     snapshot_state_to_file(&microvm_state, &params.snapshot_path)?;
+    info!("snapshot phase: write vmstate file done");
 
     let kvm_vm = vmm.vm.as_kvm().ok_or_else(|| {
         CreateSnapshotError::MicrovmState(MicrovmStateError::NotAllowed(
             "snapshot requires KVM".into(),
         ))
     })?;
+    info!("snapshot phase: dump guest memory start");
     kvm_vm.snapshot_memory_to_file(&params.mem_file_path, params.snapshot_type)?;
+    info!("snapshot phase: dump guest memory done");
 
     // We need to mark queues as dirty again for all activated devices. The reason we
     // do it here is that we don't mark pages as dirty during runtime
