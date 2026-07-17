@@ -1,0 +1,41 @@
+name: build-firecracker-binary
+
+# Builds a release x86_64-musl firecracker binary from this branch and uploads
+# it as an artifact, so it can be dropped onto an x86 host for testing. Runs in
+# firecracker's own devtool container (fcuvm), which already has the musl +
+# aws-lc-sys build toolchain the .cargo/config expects.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [debug/snapshot-phase-logging, fix/async-signal-safe-handlers]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: public.ecr.aws/firecracker/fcuvm:v92
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trust the checkout dir (container runs as root)
+        run: git config --global --add safe.directory '*'
+
+      - name: Build firecracker (release, x86_64-unknown-linux-musl)
+        run: |
+          rustup show
+          cargo build --release --target x86_64-unknown-linux-musl --bin firecracker
+
+      - name: Stage + smoke-check the binary
+        run: |
+          mkdir -p out
+          cp build/cargo_target/x86_64-unknown-linux-musl/release/firecracker out/firecracker
+          out/firecracker --version
+          file out/firecracker || true
+          sha256sum out/firecracker
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firecracker-x86_64-musl
+          path: out/firecracker
+          if-no-files-found: error
