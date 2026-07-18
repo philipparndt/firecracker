@@ -1,0 +1,960 @@
+build-is5tap| 2026-07-18T15:08:50.007696143 [anonymous-instance:main] save_state phase: vcpu state save start
+build-is5tap| 2026-07-18T15:08:50.007701443 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-is5tap| 2026-07-18T15:08:50.007705390 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-is5tap| 2026-07-18T15:08:50.007709458 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-is5tap| 2026-07-18T15:08:50.007727201 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-is5tap| 2026-07-18T15:08:50.007731088 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-is5tap| 2026-07-18T15:08:50.007735226 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.007776313 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-is5tap| 2026-07-18T15:08:50.007784909 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-is5tap| 2026-07-18T15:08:50.007789207 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.007828521 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-is5tap| 2026-07-18T15:08:50.007836957 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-is5tap| 2026-07-18T15:08:50.007842798 [anonymous-instance:fc_vcpu 2] vcpu 2: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.009773372 [anonymous-instance:fc_vcpu 0] vcpu 0: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009816092 [anonymous-instance:fc_vcpu 2] vcpu 2: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009831962 [anonymous-instance:fc_vcpu 3] vcpu 3: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.009865715 [anonymous-instance:fc_vcpu 1] vcpu 1: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009889259 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 3
+build-is5tap| 2026-07-18T15:08:50.009909207 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 4
+build-is5tap| 2026-07-18T15:08:50.009919436 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 4
+build-is5tap| 2026-07-18T15:08:50.009923704 [anonymous-instance:fc_vcpu 3] vcpu 3: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009932781 [anonymous-instance:fc_vcpu 4] vcpu 4: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.009951847 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 5
+build-is5tap| 2026-07-18T15:08:50.009964390 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 5
+build-is5tap| 2026-07-18T15:08:50.009989197 [anonymous-instance:fc_vcpu 5] vcpu 5: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.010009906 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010035664 [anonymous-instance:fc_vcpu 4] vcpu 4: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010054048 [anonymous-instance:fc_vcpu 6] vcpu 6: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.010069838 [anonymous-instance:fc_vcpu 5] vcpu 5: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010087401 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010107369 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010114432 [anonymous-instance:fc_vcpu 6] vcpu 6: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010121756 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010128699 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 0
+build-is5tap| 2026-07-18T15:08:50.010133708 [anonymous-instance:fc_vcpu 7] vcpu 7: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.010154317 [anonymous-instance:main] save_vcpu: got response <- vcpu 0
+build-is5tap| 2026-07-18T15:08:50.010162322 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 1
+build-is5tap| 2026-07-18T15:08:50.010166450 [anonymous-instance:main] save_vcpu: got response <- vcpu 1
+build-is5tap| 2026-07-18T15:08:50.010192989 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 2
+build-is5tap| 2026-07-18T15:08:50.010198430 [anonymous-instance:main] save_vcpu: got response <- vcpu 2
+build-is5tap| 2026-07-18T15:08:50.010203159 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 3
+build-is5tap| 2026-07-18T15:08:50.010208008 [anonymous-instance:main] save_vcpu: got response <- vcpu 3
+build-is5tap| 2026-07-18T15:08:50.010211224 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 4
+build-is5tap| 2026-07-18T15:08:50.010215492 [anonymous-instance:fc_vcpu 7] vcpu 7: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010228286 [anonymous-instance:main] save_vcpu: got response <- vcpu 4
+build-is5tap| 2026-07-18T15:08:50.010234698 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 5
+build-is5tap| 2026-07-18T15:08:50.010238855 [anonymous-instance:main] save_vcpu: got response <- vcpu 5
+build-is5tap| 2026-07-18T15:08:50.010241921 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010245819 [anonymous-instance:main] save_vcpu: got response <- vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010249025 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010252431 [anonymous-instance:main] save_vcpu: got response <- vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010255366 [anonymous-instance:main] save_vcpu: all 8 responses collected
+build-is5tap| 2026-07-18T15:08:50.010338222 [anonymous-instance:main] save_state phase: vcpu state save done
+build-is5tap| 2026-07-18T15:08:50.010359001 [anonymous-instance:main] snapshot phase: save_state done
+build-is5tap| 2026-07-18T15:08:50.007696143 [anonymous-instance:main] save_state phase: vcpu state save start
+build-is5tap| 2026-07-18T15:08:50.007701443 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-is5tap| 2026-07-18T15:08:50.007705390 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-is5tap| 2026-07-18T15:08:50.007709458 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-is5tap| 2026-07-18T15:08:50.007727201 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-is5tap| 2026-07-18T15:08:50.007731088 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-is5tap| 2026-07-18T15:08:50.007735226 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.007776313 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-is5tap| 2026-07-18T15:08:50.007784909 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-is5tap| 2026-07-18T15:08:50.007789207 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.007828521 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-is5tap| 2026-07-18T15:08:50.007836957 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-is5tap| 2026-07-18T15:08:50.007842798 [anonymous-instance:fc_vcpu 2] vcpu 2: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.009773372 [anonymous-instance:fc_vcpu 0] vcpu 0: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009816092 [anonymous-instance:fc_vcpu 2] vcpu 2: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009831962 [anonymous-instance:fc_vcpu 3] vcpu 3: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.009865715 [anonymous-instance:fc_vcpu 1] vcpu 1: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009889259 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 3
+build-is5tap| 2026-07-18T15:08:50.009909207 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 4
+build-is5tap| 2026-07-18T15:08:50.009919436 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 4
+build-is5tap| 2026-07-18T15:08:50.009923704 [anonymous-instance:fc_vcpu 3] vcpu 3: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.009932781 [anonymous-instance:fc_vcpu 4] vcpu 4: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.009951847 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 5
+build-is5tap| 2026-07-18T15:08:50.009964390 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 5
+build-is5tap| 2026-07-18T15:08:50.009989197 [anonymous-instance:fc_vcpu 5] vcpu 5: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.010009906 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010035664 [anonymous-instance:fc_vcpu 4] vcpu 4: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010054048 [anonymous-instance:fc_vcpu 6] vcpu 6: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.010069838 [anonymous-instance:fc_vcpu 5] vcpu 5: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010087401 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010107369 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010114432 [anonymous-instance:fc_vcpu 6] vcpu 6: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010121756 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010128699 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 0
+build-is5tap| 2026-07-18T15:08:50.010133708 [anonymous-instance:fc_vcpu 7] vcpu 7: SaveState received, calling kvm_vcpu.save_state()
+build-is5tap| 2026-07-18T15:08:50.010154317 [anonymous-instance:main] save_vcpu: got response <- vcpu 0
+build-is5tap| 2026-07-18T15:08:50.010162322 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 1
+build-is5tap| 2026-07-18T15:08:50.010166450 [anonymous-instance:main] save_vcpu: got response <- vcpu 1
+build-is5tap| 2026-07-18T15:08:50.010192989 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 2
+build-is5tap| 2026-07-18T15:08:50.010198430 [anonymous-instance:main] save_vcpu: got response <- vcpu 2
+build-is5tap| 2026-07-18T15:08:50.010203159 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 3
+build-is5tap| 2026-07-18T15:08:50.010208008 [anonymous-instance:main] save_vcpu: got response <- vcpu 3
+build-is5tap| 2026-07-18T15:08:50.010211224 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 4
+build-is5tap| 2026-07-18T15:08:50.010215492 [anonymous-instance:fc_vcpu 7] vcpu 7: save_state done, sending SavedState
+build-is5tap| 2026-07-18T15:08:50.010228286 [anonymous-instance:main] save_vcpu: got response <- vcpu 4
+build-is5tap| 2026-07-18T15:08:50.010234698 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 5
+build-is5tap| 2026-07-18T15:08:50.010238855 [anonymous-instance:main] save_vcpu: got response <- vcpu 5
+build-is5tap| 2026-07-18T15:08:50.010241921 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010245819 [anonymous-instance:main] save_vcpu: got response <- vcpu 6
+build-is5tap| 2026-07-18T15:08:50.010249025 [anonymous-instance:main] save_vcpu: awaiting response <- vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010252431 [anonymous-instance:main] save_vcpu: got response <- vcpu 7
+build-is5tap| 2026-07-18T15:08:50.010255366 [anonymous-instance:main] save_vcpu: all 8 responses collected
+build-is5tap| 2026-07-18T15:08:50.010338222 [anonymous-instance:main] save_state phase: vcpu state save done
+build-is5tap| 2026-07-18T15:08:50.010359001 [anonymous-instance:main] snapshot phase: save_state done
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+build-em2ovv| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+build-em2ovv| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+build-em2ovv| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+build-em2ovv| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+build-em2ovv| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+build-em2ovv| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+build-em2ovv| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+build-em2ovv| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+vehub-cluster-ctl| 2026-07-18T15:10:00.958017155 [anonymous-instance:main] save_state phase: vcpu state save start
+vehub-cluster-ctl| 2026-07-18T15:10:00.958019319 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+vehub-cluster-ctl| 2026-07-18T15:10:00.958021503 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+vehub-cluster-ctl| 2026-07-18T15:10:00.958023807 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+vehub-cluster-ctl| 2026-07-18T15:10:00.958032915 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+vehub-cluster-ctl| 2026-07-18T15:10:00.958036611 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+vehub-cluster-ctl| 2026-07-18T15:10:00.958040499 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+vehub-cluster-ctl| 2026-07-18T15:10:00.958050428 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+vehub-cluster-ctl| 2026-07-18T15:10:00.958054014 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+vehub-cluster-ctl| 2026-07-18T15:10:00.958057882 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+vehub-cluster-ctl| 2026-07-18T15:10:00.958072188 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+vehub-cluster-ctl| 2026-07-18T15:10:00.958077208 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3

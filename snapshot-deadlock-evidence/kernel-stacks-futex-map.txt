@@ -1,0 +1,97 @@
+######## LIVE STALL DUMP @ 14:04:58UTC ########
+STALLED pid=54866 build=build-o74elg
+=== fc-debug save tail ===
+2026-07-18T16:00:24.957988726 [anonymous-instance:main] save_vcpu: acquiring vcpus_handles lock
+2026-07-18T16:00:24.957991221 [anonymous-instance:main] save_vcpu: lock acquired (8 vcpus); sending SaveState
+2026-07-18T16:00:24.957994527 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 0
+2026-07-18T16:00:24.958008954 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 0
+2026-07-18T16:00:24.958011298 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 1
+2026-07-18T16:00:24.958019754 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 1
+2026-07-18T16:00:24.958022840 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 2
+2026-07-18T16:00:24.958034602 [anonymous-instance:main] save_vcpu: sent SaveState -> vcpu 2
+2026-07-18T16:00:24.958037117 [anonymous-instance:main] save_vcpu: send SaveState -> vcpu 3
+2026-07-18T16:00:24.958040363 [anonymous-instance:fc_vcpu 1] vcpu 1: SaveState received, calling kvm_vcpu.save_state()
+2026-07-18T16:00:24.958075128 [anonymous-instance:fc_vcpu 0] vcpu 0: SaveState received, calling kvm_vcpu.save_state()
+2026-07-18T16:00:24.958095176 [anonymous-instance:fc_vcpu 2] vcpu 2: SaveState received, calling kvm_vcpu.save_state()
+=== threads ===
+--- tid=54866 comm=firecracker wchan=futex_wait_queue ---
+  syscall: 202 0x7f47412efa58 0x89 0x2 0x0 0x0 0xffffffff 0x7ffe38b56880 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54950 comm=fc_api wchan=futex_wait_queue ---
+  syscall: 202 0x7f474135e748 0x89 0xffffffff 0x0 0x0 0x7f47ffffffff 0x7f4740ffe280 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54953 comm=fc_vcpu 0 wchan=futex_wait_queue ---
+  syscall: 202 0x7f47412f3428 0x80 0xffffffff80000003 0x0 0x80000003 0xca 0x7f42c09fd550 0x7f474126d6b9
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54954 comm=fc_vcpu 1 wchan=futex_wait_queue ---
+  syscall: 202 0x7f47412efa58 0x89 0x2 0x0 0x0 0xffffffff 0x7f42c07f9530 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54955 comm=fc_vcpu 2 wchan=futex_wait_queue ---
+  syscall: 202 0x7f47412f3428 0x80 0xffffffff80000002 0x0 0x80000002 0xca 0x7f42c05f7400 0x7f474126d6b9
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54956 comm=fc_vcpu 3 wchan=futex_wait_queue ---
+  syscall: 202 0x7f47412efa58 0x89 0x2 0x0 0x0 0xffffffff 0x7f42c03f4390 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54957 comm=fc_vcpu 4 wchan=futex_wait_queue ---
+  syscall: 202 0x7f4740d4fbb8 0x89 0xffffffff 0x0 0x0 0xffffffff 0x7f42c01f1440 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54958 comm=fc_vcpu 5 wchan=futex_wait_queue ---
+  syscall: 202 0x7f4740d5ce38 0x89 0xffffffff 0x0 0x0 0xffffffff 0x7f42bffee440 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54959 comm=fc_vcpu 6 wchan=futex_wait_queue ---
+  syscall: 202 0x7f4740d5ceb8 0x89 0xffffffff 0x0 0x0 0xffffffff 0x7f42bfdeb440 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+--- tid=54960 comm=fc_vcpu 7 wchan=futex_wait_queue ---
+  syscall: 202 0x7f4740d5cf38 0x89 0xffffffff 0x0 0x0 0x7f47ffffffff 0x7f42bfbe8440 0x7f4741269d97
+[<0>] futex_wait_queue+0x60/0x90
+[<0>] futex_wait+0x169/0x250
+[<0>] do_futex+0x11c/0x1b0
+[<0>] __x64_sys_futex+0x5e/0x1d0
+[<0>] do_syscall_64+0x58/0x80
+[<0>] entry_SYSCALL_64_after_hwframe+0x7c/0xe6
+RUNNING=0
