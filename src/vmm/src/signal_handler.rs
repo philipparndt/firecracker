@@ -65,7 +65,7 @@ fn exit_with_code(exit_code: FcExitCode) {
 macro_rules! generate_handler {
     ($fn_name:ident ,$signal_name:ident, $exit_code:ident, $signal_metric:expr, $body:ident) => {
         #[inline(always)]
-        extern "C" fn $fn_name(num: c_int, info: *mut siginfo_t, _unused: *mut c_void) {
+        extern "C" fn $fn_name(num: c_int, info: *mut siginfo_t, ucontext: *mut c_void) {
             // SAFETY: Safe because we're just reading some fields from a supposedly valid argument.
             let si_signo = unsafe { (*info).si_signo };
             // SAFETY: Safe because we're just reading some fields from a supposedly valid argument.
@@ -81,7 +81,7 @@ macro_rules! generate_handler {
                 si_signo, si_code
             ));
 
-            $body(si_code, info);
+            $body(si_code, info, ucontext);
 
             match si_signo {
                 $signal_name => exit_with_code(crate::FcExitCode::$exit_code),
@@ -91,7 +91,7 @@ macro_rules! generate_handler {
     };
 }
 
-fn log_sigsys_err(si_code: c_int, info: *mut siginfo_t) {
+fn log_sigsys_err(si_code: c_int, info: *mut siginfo_t, ucontext: *mut c_void) {
     if si_code != SYS_SECCOMP_CODE {
         // We received a SIGSYS for a reason other than `bad syscall`.
         exit_with_code(FcExitCode::UnexpectedError);
@@ -100,13 +100,38 @@ fn log_sigsys_err(si_code: c_int, info: *mut siginfo_t) {
     // SAFETY: Other signals which might do async unsafe things incompatible with the rest of this
     // function are blocked due to the sa_mask used when registering the signal handler.
     let syscall = unsafe { *(info as *const i32).offset(SI_OFF_SYSCALL) };
+
+    // DIAG: for a seccomp-trapped syscall the args are in the saved registers in
+    // the ucontext. On x86_64 the syscall ABI is rdi,rsi,rdx,r10,r8,r9; for mmap
+    // (syscall 9) that is addr,len,prot,flags,fd,off. Dump flags/prot/fd/len so
+    // the exact blocked mmap can be added to the seccomp filter.
+    #[cfg(target_arch = "x86_64")]
+    let (flags, prot, fd, len): (i64, i64, i64, i64) = if ucontext.is_null() {
+        (-1, -1, -1, -1)
+    } else {
+        // SAFETY: ucontext is a valid ucontext_t for the duration of the handler.
+        let g = unsafe { (*(ucontext as *const libc::ucontext_t)).uc_mcontext.gregs };
+        (
+            g[libc::REG_R10 as usize],
+            g[libc::REG_RDX as usize],
+            g[libc::REG_R8 as usize],
+            g[libc::REG_RSI as usize],
+        )
+    };
+    #[cfg(not(target_arch = "x86_64"))]
+    let (flags, prot, fd, len): (i64, i64, i64, i64) = {
+        let _ = ucontext;
+        (-1, -1, -1, -1)
+    };
+
     write_stderr(format_args!(
-        "Shutting down VM after intercepting a bad syscall ({}).\n",
-        syscall
+        "Shutting down VM after intercepting a bad syscall ({}). mmap-args \
+         flags={} prot={} fd={} len={}\n",
+        syscall, flags, prot, fd, len
     ));
 }
 
-fn empty_fn(_si_code: c_int, _info: *mut siginfo_t) {}
+fn empty_fn(_si_code: c_int, _info: *mut siginfo_t, _ucontext: *mut c_void) {}
 
 generate_handler!(
     sigxfsz_handler,
