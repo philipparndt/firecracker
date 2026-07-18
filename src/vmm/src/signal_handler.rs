@@ -197,6 +197,12 @@ mod tests {
     /// handler that is not async-signal-safe never returns from the raise.
     #[test]
     fn test_sigpipe_handler_completes_while_logger_mutex_is_held() {
+        // Logging macros dispatch through the `log` facade, which is a no-op
+        // until LOGGER is registered (in production: at startup, in main()).
+        // Register it here, or a handler that logs would never reach
+        // Logger::log and its mutex, and this test would pass vacuously.
+        // Ignore the error if another test already registered it.
+        let _ = LOGGER.init();
         register_signal_handler(SIGPIPE, sigpipe_handler).unwrap();
 
         // Hold the logger mutex for the duration of the raise, standing in
