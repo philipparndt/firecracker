@@ -11,6 +11,24 @@ on:
     branches: [debug/snapshot-phase-logging, fix/async-signal-safe-handlers]
 
 jobs:
+  # Regression tests for the async-signal-safety of the signal handlers
+  # (the /snapshot/create futex deadlock). Runs on the musl target to match
+  # the production libc.
+  unit-test-signal-handler:
+    runs-on: ubuntu-latest
+    container:
+      image: public.ecr.aws/firecracker/fcuvm:v92
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trust the checkout dir (container runs as root)
+        run: git config --global --add safe.directory '*'
+
+      - name: Run signal_handler unit tests
+        run: |
+          cargo test -p vmm --lib --target x86_64-unknown-linux-musl \
+            -- signal_handler::tests
+
   build:
     runs-on: ubuntu-latest
     container:

@@ -215,3 +215,68 @@ pub fn register_signal_handlers() -> vmm_sys_util::errno::Result<()> {
     register_signal_handler(SIGILL, sigill_handler)?;
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use std::sync::mpsc;
+    use std::time::Duration;
+
+    use super::*;
+    use crate::logger::LOGGER;
+
+    /// How long to wait for the signal handler to return before declaring it
+    /// deadlocked.
+    const HANDLER_TIMEOUT: Duration = Duration::from_secs(5);
+
+    /// Regression test for an intermittent all-threads futex deadlock during
+    /// `PUT /snapshot/create`.
+    ///
+    /// A signal handler that logs takes the logger mutex from signal context.
+    /// If the signal lands on a thread whose interrupted frame holds a lock
+    /// the logging path needs (the allocator lock, or the logger mutex
+    /// itself), the handler blocks forever inside signal context, the
+    /// interrupted frame never releases its lock, and every other thread that
+    /// logs or allocates piles up behind the two locks.
+    ///
+    /// The handler must therefore complete without touching the logger: this
+    /// test raises SIGPIPE while another thread holds the logger mutex, and a
+    /// handler that is not async-signal-safe never returns from the raise.
+    #[test]
+    fn test_sigpipe_handler_completes_while_logger_mutex_is_held() {
+        register_signal_handler(SIGPIPE, sigpipe_handler).unwrap();
+
+        // Hold the logger mutex for the duration of the raise, standing in
+        // for the lock-holder the signal handler must not wait on.
+        let logger_guard = LOGGER.0.lock().unwrap();
+
+        let (tx, rx) = mpsc::channel();
+        let raiser = std::thread::spawn(move || {
+            // SAFETY: Safe because a handler is installed for SIGPIPE.
+            assert_eq!(unsafe { libc::raise(SIGPIPE) }, 0);
+            tx.send(()).unwrap();
+        });
+
+        let result = rx.recv_timeout(HANDLER_TIMEOUT);
+        // Release the mutex before asserting so that on failure the blocked
+        // handler can still finish and the test exits with a message instead
+        // of poisoning the logger for the rest of the test run.
+        drop(logger_guard);
+        raiser.join().unwrap();
+        result.expect(
+            "sigpipe_handler did not return while the logger mutex was held by another thread: \
+             it is not async-signal-safe",
+        );
+    }
+
+    #[test]
+    fn test_sigpipe_handler_increments_metric() {
+        register_signal_handler(SIGPIPE, sigpipe_handler).unwrap();
+
+        let before = METRICS.signals.sigpipe.count();
+        // SAFETY: Safe because a handler is installed for SIGPIPE.
+        assert_eq!(unsafe { libc::raise(SIGPIPE) }, 0);
+        // `>` rather than `==`: other tests in this process may raise SIGPIPE
+        // concurrently.
+        assert!(METRICS.signals.sigpipe.count() > before);
+    }
+}
