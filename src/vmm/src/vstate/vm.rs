@@ -323,22 +323,38 @@ impl KvmVm {
     ) -> Result<Vec<crate::vstate::vcpu::VcpuState>, crate::persist::MicrovmStateError> {
         use crate::persist::MicrovmStateError;
 
+        // DIAG: fine-grained phase logging to localize the intermittent
+        // /snapshot/create hang inside vcpu-state save. RECV is 30s-bounded, so
+        // an 8-min hang must be the (unbounded) handles mutex lock or send_event.
+        info!("save_vcpu: acquiring vcpus_handles lock");
         let mut handles = self.vcpus_handles();
-        for handle in handles.iter_mut() {
+        info!("save_vcpu: lock acquired ({} vcpus); sending SaveState", handles.len());
+        for (i, handle) in handles.iter_mut().enumerate() {
+            info!("save_vcpu: send SaveState -> vcpu {i}");
             handle
                 .send_event(crate::VcpuEvent::SaveState)
                 .map_err(MicrovmStateError::SignalVcpu)?;
+            info!("save_vcpu: sent SaveState -> vcpu {i}");
         }
 
-        let vcpu_responses = handles
-            .iter()
-            .map(|handle| {
-                handle
-                    .response_receiver()
-                    .recv_timeout(crate::RECV_TIMEOUT_SEC)
-            })
-            .collect::<Result<Vec<crate::VcpuResponse>, _>>()
-            .map_err(|_| MicrovmStateError::UnexpectedVcpuResponse)?;
+        let mut vcpu_responses = Vec::with_capacity(handles.len());
+        for (i, handle) in handles.iter().enumerate() {
+            info!("save_vcpu: awaiting response <- vcpu {i}");
+            match handle
+                .response_receiver()
+                .recv_timeout(crate::RECV_TIMEOUT_SEC)
+            {
+                Ok(resp) => {
+                    info!("save_vcpu: got response <- vcpu {i}");
+                    vcpu_responses.push(resp);
+                }
+                Err(err) => {
+                    info!("save_vcpu: TIMEOUT/ERR awaiting vcpu {i}: {err:?}");
+                    return Err(MicrovmStateError::UnexpectedVcpuResponse);
+                }
+            }
+        }
+        info!("save_vcpu: all {} responses collected", vcpu_responses.len());
 
         vcpu_responses
             .into_iter()

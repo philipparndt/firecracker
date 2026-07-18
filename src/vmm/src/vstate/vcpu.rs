@@ -323,14 +323,21 @@ impl Vcpu {
             }
             Ok(VcpuEvent::SaveState) => {
                 // Save vcpu state.
+                // DIAG: localize the intermittent snapshot hang — if a vcpu logs
+                // "SaveState received" but never "save_state done", it is stuck
+                // in the KVM_GET_* ioctls of kvm_vcpu.save_state().
+                let idx = self.kvm_vcpu.index;
+                info!("vcpu {idx}: SaveState received, calling kvm_vcpu.save_state()");
                 self.kvm_vcpu
                     .save_state()
                     .map(|vcpu_state| {
+                        info!("vcpu {idx}: save_state done, sending SavedState");
                         self.response_sender
                             .send(VcpuResponse::SavedState(Box::new(vcpu_state)))
                             .expect("vcpu channel unexpectedly closed");
                     })
                     .unwrap_or_else(|err| {
+                        info!("vcpu {idx}: save_state ERR: {err:?}");
                         self.response_sender
                             .send(VcpuResponse::Error(VcpuError::VcpuResponse(err)))
                             .expect("vcpu channel unexpectedly closed");
