@@ -8,7 +8,12 @@ name: build-firecracker-binary
 on:
   workflow_dispatch:
   push:
-    branches: [debug/snapshot-phase-logging, fix/async-signal-safe-handlers]
+    branches:
+      [
+        debug/snapshot-phase-logging,
+        fix/async-signal-safe-handlers,
+        demo/sigpipe-handler-deadlock,
+      ]
 
 jobs:
   # Regression tests for the async-signal-safety of the signal handlers

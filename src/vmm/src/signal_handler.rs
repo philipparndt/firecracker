@@ -6,7 +6,7 @@ use libc::{
 };
 
 use crate::FcExitCode;
-use crate::logger::{IncMetric, METRICS, StoreMetric};
+use crate::logger::{IncMetric, METRICS, StoreMetric, error_unrestricted};
 use crate::utils::signal::register_signal_handler;
 
 // The offset of `si_syscall` (offending syscall identifier) within the siginfo structure
@@ -18,46 +18,12 @@ const SI_OFF_SYSCALL: isize = 6;
 
 const SYS_SECCOMP_CODE: i32 = 1;
 
-/// Size of the stack buffer used by [`write_stderr`]; messages longer than
-/// this are truncated.
-const STDERR_MSG_CAP: usize = 128;
-
-/// Writes a formatted message to stderr with a single `write(2)`.
-///
-/// This runs in signal handler context, so it must only perform
-/// async-signal-safe operations: the logger (mutex) and anything that
-/// allocates are off-limits, because the interrupted thread may already hold
-/// the logger or allocator lock, which would deadlock the process. Formatting
-/// into a fixed stack buffer and calling `write(2)` avoids both.
-fn write_stderr(args: std::fmt::Arguments) {
-    struct Buf {
-        data: [u8; STDERR_MSG_CAP],
-        len: usize,
-    }
-    impl std::fmt::Write for Buf {
-        fn write_str(&mut self, s: &str) -> std::fmt::Result {
-            // Truncate instead of failing; this is a best-effort message.
-            let n = s.len().min(self.data.len() - self.len);
-            self.data[self.len..self.len + n].copy_from_slice(&s.as_bytes()[..n]);
-            self.len += n;
-            Ok(())
-        }
-    }
-    let mut buf = Buf {
-        data: [0; STDERR_MSG_CAP],
-        len: 0,
-    };
-    let _ = std::fmt::Write::write_fmt(&mut buf, args);
-    // SAFETY: Safe because the buffer lives on the stack for the duration of
-    // the call; `write(2)` is async-signal-safe per signal-safety(7).
-    unsafe { libc::write(libc::STDERR_FILENO, buf.data.as_ptr().cast(), buf.len) };
-}
-
 #[inline]
 fn exit_with_code(exit_code: FcExitCode) {
-    // Note: no metrics flush here. This is only called from signal handlers,
-    // and `METRICS.write()` locks and allocates, neither of which is
-    // async-signal-safe. In-memory metrics are lost on this exit path.
+    // Write the metrics before exiting.
+    if let Err(err) = METRICS.write() {
+        error_unrestricted!("Failed to write metrics while stopping: {}", err);
+    }
     // SAFETY: Safe because we're terminating the process anyway.
     unsafe { libc::_exit(exit_code as i32) };
 }
@@ -76,10 +42,11 @@ macro_rules! generate_handler {
             }
             $signal_metric.store(1);
 
-            write_stderr(format_args!(
-                "Shutting down VM after intercepting signal {}, code {}.\n",
-                si_signo, si_code
-            ));
+            error_unrestricted!(
+                "Shutting down VM after intercepting signal {}, code {}.",
+                si_signo,
+                si_code
+            );
 
             $body(si_code, info);
 
@@ -100,10 +67,10 @@ fn log_sigsys_err(si_code: c_int, info: *mut siginfo_t) {
     // SAFETY: Other signals which might do async unsafe things incompatible with the rest of this
     // function are blocked due to the sa_mask used when registering the signal handler.
     let syscall = unsafe { *(info as *const i32).offset(SI_OFF_SYSCALL) };
-    write_stderr(format_args!(
-        "Shutting down VM after intercepting a bad syscall ({}).\n",
+    error_unrestricted!(
+        "Shutting down VM after intercepting a bad syscall ({}).",
         syscall
-    ));
+    );
 }
 
 fn empty_fn(_si_code: c_int, _info: *mut siginfo_t) {}
@@ -167,13 +134,6 @@ generate_handler!(
 extern "C" fn sigpipe_handler(num: c_int, info: *mut siginfo_t, _unused: *mut c_void) {
     // Just record the metric and allow the process to continue, the EPIPE error needs
     // to be handled at caller level.
-    //
-    // Unlike the other handlers this one returns and lets the process keep
-    // running, so it is the one where async-signal-safety matters most: it
-    // must not touch the logger or allocate. SIGPIPE can interrupt a thread
-    // that holds the allocator or logger lock (e.g. a vCPU mid-allocation in
-    // save_state()); blocking on either lock here deadlocks every thread that
-    // subsequently logs or allocates.
 
     // SAFETY: Safe because we're just reading some fields from a supposedly valid argument.
     let si_signo = unsafe { (*info).si_signo };
@@ -181,19 +141,13 @@ extern "C" fn sigpipe_handler(num: c_int, info: *mut siginfo_t, _unused: *mut c_
     let si_code = unsafe { (*info).si_code };
 
     if num != si_signo || num != SIGPIPE {
-        write_stderr(format_args!(
-            "Received invalid signal {}, code {}.\n",
-            si_signo, si_code
-        ));
+        error_unrestricted!("Received invalid signal {}, code {}.", si_signo, si_code);
         return;
     }
 
     METRICS.signals.sigpipe.inc();
 
-    write_stderr(format_args!(
-        "Received signal {}, code {}.\n",
-        si_signo, si_code
-    ));
+    error_unrestricted!("Received signal {}, code {}.", si_signo, si_code);
 }
 
 /// Registers all the required signal handlers.
