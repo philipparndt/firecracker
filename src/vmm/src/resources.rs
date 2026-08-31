@@ -621,6 +621,7 @@ mod tests {
                 cache_type: CacheType::Unsafe,
 
                 is_read_only: Some(false),
+                discard: None,
                 path_on_host: Some(tmp_file.as_path().to_str().unwrap().to_string()),
                 rate_limiter: Some(RateLimiterConfig::default()),
                 file_engine_type: None,
@@ -1240,6 +1241,7 @@ mod tests {
                             "path_on_host": "{}",
                             "is_root_device": true,
                             "is_read_only": false,
+                            "discard": false,
                             "io_engine": "Sync"
                         }}
                     ],
@@ -1315,6 +1317,7 @@ mod tests {
                             "path_on_host": "{}",
                             "is_root_device": true,
                             "is_read_only": false,
+                            "discard": false,
                             "io_engine": "Sync"
                         }}
                     ],
@@ -1375,6 +1378,7 @@ mod tests {
                             "path_on_host": "{}",
                             "is_root_device": true,
                             "is_read_only": false,
+                            "discard": false,
                             "io_engine": "Sync"
                         }}
                     ],

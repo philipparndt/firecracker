@@ -112,6 +112,7 @@ impl Persist<'_> for VirtioBlock {
 
         let config_space = ConfigSpace {
             capacity: disk_properties.nsectors.to_le(),
+            ..Default::default()
         };
 
         Ok(VirtioBlock {
@@ -159,6 +160,7 @@ mod tests {
             is_root_device: false,
             partuuid: None,
             is_read_only: false,
+            discard: false,
             cache_type: CacheType::Writeback,
             rate_limiter: None,
             file_engine_type: FileEngineType::default(),
@@ -200,6 +202,7 @@ mod tests {
             is_root_device: false,
             partuuid: None,
             is_read_only: false,
+            discard: false,
             cache_type: CacheType::Unsafe,
             rate_limiter: None,
             file_engine_type: FileEngineType::default(),

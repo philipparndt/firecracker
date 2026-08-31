@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased — vehub fork]
+
+This section records changes carried only on this fork's branches, on top of the
+upstream `v1.16.1` tag. See `FORK-PATCHES.md` for the full list with drop
+conditions.
+
+### Added
+
+- [#6142](https://github.com/firecracker-microvm/firecracker/pull/6142)
+  (backport of the maintainer rebase of
+  [#5908](https://github.com/firecracker-microvm/firecracker/pull/5908)): Add
+  opt-in virtio-blk discard support for writable `Sync` IO engine drives through
+  the `discard` drive configuration field. See the
+  [block discard documentation](docs/api_requests/block-discard.md). Backported
+  onto `v1.16.1` rather than adopting upstream `main`, whose `SNAPSHOT_VERSION`
+  major differs and would orphan existing snapshots. Drop this patch when #6142
+  merges into a release this fork adopts.
+- Local addition, not in #6142: `discard_count` and `discard_bytes` block device
+  metrics, so a reclaim that frees nothing is distinguishable from one that did
+  not run.
+
 ## [1.16.1]
 
 ### Fixed

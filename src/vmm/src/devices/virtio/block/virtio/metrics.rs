@@ -157,6 +157,12 @@ pub struct BlockDeviceMetrics {
     pub invalid_reqs_count: SharedIncMetric,
     /// Number of flushes operation triggered on this block device.
     pub flush_count: SharedIncMetric,
+    /// Number of discard requests completed successfully on this block device.
+    /// Local fork addition (not in upstream #6142): without it, a reclaim that
+    /// freed nothing is indistinguishable from one that never ran.
+    pub discard_count: SharedIncMetric,
+    /// Number of bytes successfully discarded on this block device.
+    pub discard_bytes: SharedIncMetric,
     /// Number of events triggered on the queue of this block device.
     pub queue_event_count: SharedIncMetric,
     /// Number of events ratelimiter-related.
