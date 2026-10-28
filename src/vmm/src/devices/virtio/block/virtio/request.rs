@@ -172,9 +172,13 @@ impl PendingRequest {
                 }
                 status
             }
-            (Ok(_), RequestType::Discard) => Status::Ok {
-                num_bytes_to_mem: 0,
-            },
+            (Ok(discarded_data_len), RequestType::Discard) => {
+                block_metrics.discard_count.inc();
+                block_metrics.discard_bytes.add(discarded_data_len.into());
+                Status::Ok {
+                    num_bytes_to_mem: 0,
+                }
+            }
             (Ok(_), RequestType::Flush) => {
                 block_metrics.flush_count.inc();
                 Status::Ok {
@@ -808,6 +812,46 @@ mod tests {
         mem.write_obj(range, GuestAddress(chain.data_desc.addr.get()))
             .unwrap();
         chain.check_parse(true);
+    }
+
+    #[test]
+    fn test_discard_metrics() {
+        // Local fork addition: a successful discard must advance both counters,
+        // so an operator can tell a reclaim that freed nothing from one that
+        // never ran at all.
+        let mem = default_mem();
+        let metrics = BlockDeviceMetrics::new();
+
+        assert_eq!(metrics.discard_count.count(), 0);
+        assert_eq!(metrics.discard_bytes.count(), 0);
+
+        let pending = PendingRequest {
+            r#type: RequestType::Discard,
+            data_len: 8192,
+            status_addr: GuestAddress(0x1000),
+            desc_idx: 0,
+        };
+        let _ = pending.finish(&mem, Ok(8192), &metrics);
+
+        assert_eq!(metrics.discard_count.count(), 1);
+        assert_eq!(metrics.discard_bytes.count(), 8192);
+
+        // A discard the device refused (feature not negotiated) must not be
+        // counted as reclaimed space.
+        let pending = PendingRequest {
+            r#type: RequestType::Discard,
+            data_len: 8192,
+            status_addr: GuestAddress(0x1000),
+            desc_idx: 0,
+        };
+        let _ = pending.finish(
+            &mem,
+            Err(IoErr::UnsupportedRequest(VIRTIO_BLK_T_DISCARD)),
+            &metrics,
+        );
+
+        assert_eq!(metrics.discard_count.count(), 1);
+        assert_eq!(metrics.discard_bytes.count(), 8192);
     }
 
     #[test]

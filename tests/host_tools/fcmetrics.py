@@ -85,6 +85,8 @@ def validate_fc_metrics(metrics):
         "execute_fails",
         "invalid_reqs_count",
         "flush_count",
+        "discard_count",
+        "discard_bytes",
         "queue_event_count",
         "rate_limiter_event_count",
         "update_count",
