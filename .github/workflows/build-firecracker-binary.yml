@@ -1,0 +1,111 @@
+name: build-firecracker-binary
+
+# Builds release musl firecracker + jailer binaries for x86_64 and aarch64
+# from this fork, and runs the unit tests that cover the fork's local patches
+# (see FORK-PATCHES.md). Pushing a `v*-fork.*` tag additionally publishes the
+# binaries as a GitHub release, which is what deployments should consume:
+# workflow artifacts expire, release assets do not.
+#
+# Runs in firecracker's own devtool container (fcuvm), which already has the
+# musl + aws-lc-sys build toolchain the .cargo/config expects. Keep the image
+# tag in sync with DEVCTR_IMAGE_TAG in tools/devtool.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [fork/v1.17.0]
+    tags: ["v*-fork.*"]
+
+permissions:
+  contents: read
+
+env:
+  DEVCTR_IMAGE: public.ecr.aws/firecracker/fcuvm:v93
+
+jobs:
+  # Unit tests for the fork's local patches, on the production libc (musl).
+  unit-test:
+    runs-on: ubuntu-latest
+    container:
+      image: public.ecr.aws/firecracker/fcuvm:v93
+      # Docker's default seccomp profile blocks io_uring_setup, which the
+      # Async block engine tests need.
+      options: --security-opt seccomp=unconfined
+    env:
+      # Like upstream's test_unittests: several tests assert on shared
+      # metrics and are not safe to run in parallel.
+      RUST_TEST_THREADS: 1
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trust the checkout dir (container runs as root)
+        run: git config --global --add safe.directory '*'
+
+      - name: Run signal handler, block device and logger unit tests
+        run: |
+          cargo test -p vmm --lib --target x86_64-unknown-linux-musl \
+            -- signal_handler:: devices::virtio::block:: logger::
+
+  build:
+    strategy:
+      matrix:
+        include:
+          - arch: x86_64
+            runner: ubuntu-latest
+          - arch: aarch64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    container:
+      image: public.ecr.aws/firecracker/fcuvm:v93
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trust the checkout dir (container runs as root)
+        run: git config --global --add safe.directory '*'
+
+      - name: Build firecracker + jailer (release, ${{ matrix.arch }}-unknown-linux-musl)
+        run: |
+          rustup show
+          # --workspace: jailer is not in the workspace's default-members.
+          cargo build --release --workspace \
+            --target ${{ matrix.arch }}-unknown-linux-musl \
+            --bin firecracker --bin jailer
+
+      - name: Stage + smoke-check the binaries
+        run: |
+          B=build/cargo_target/${{ matrix.arch }}-unknown-linux-musl/release
+          mkdir -p out
+          cp "$B/firecracker" "out/firecracker-${{ matrix.arch }}"
+          cp "$B/jailer" "out/jailer-${{ matrix.arch }}"
+          "out/firecracker-${{ matrix.arch }}" --version
+          file out/* || true
+          (cd out && sha256sum * > "SHA256SUMS-${{ matrix.arch }}")
+          cat "out/SHA256SUMS-${{ matrix.arch }}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firecracker-${{ matrix.arch }}-musl
+          path: out/*
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [unit-test, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls -l out
+          gh release create "$GITHUB_REF_NAME" out/* \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "$GITHUB_REF_NAME" \
+            --notes "Fork build of upstream firecracker with the local patches listed in FORK-PATCHES.md at $GITHUB_SHA. Static musl binaries for x86_64 and aarch64."

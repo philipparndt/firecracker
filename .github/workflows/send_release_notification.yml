@@ -9,6 +9,8 @@ permissions: {}
 
 jobs:
   send_notification:
+    # The webhook secret only exists upstream; skip in forks.
+    if: github.repository == 'firecracker-microvm/firecracker'
     runs-on: ubuntu-latest
     steps:
       - name: notify
