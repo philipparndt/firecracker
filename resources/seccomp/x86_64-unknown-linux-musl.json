@@ -1290,6 +1290,39 @@
                 ]
             },
             {
+                "syscall": "mmap",
+                "comment": "Used by musl mallocng to reserve guarded metadata areas (mprotected RW below)",
+                "args": [
+                    {
+                        "index": 3,
+                        "type": "dword",
+                        "op": "eq",
+                        "val": 34,
+                        "comment": "libc::MAP_ANONYMOUS|libc::MAP_PRIVATE"
+                    },
+                    {
+                        "index": 2,
+                        "type": "dword",
+                        "op": "eq",
+                        "val": 0,
+                        "comment": "libc::PROT_NONE"
+                    }
+                ]
+            },
+            {
+                "syscall": "mprotect",
+                "comment": "Used by musl mallocng to unprotect the first page of a metadata area",
+                "args": [
+                    {
+                        "index": 2,
+                        "type": "dword",
+                        "op": "eq",
+                        "val": 3,
+                        "comment": "libc::PROT_READ|libc::PROT_WRITE"
+                    }
+                ]
+            },
+            {
                 "syscall": "rt_sigaction",
                 "comment": "rt_sigaction is used by libc::abort during a panic to install the default handler for SIGABRT",
                 "args": [
