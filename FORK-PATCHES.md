@@ -103,11 +103,14 @@ schema; both are fixed here.
 ## Patch 4 — CI
 
 - **Files**: `.github/workflows/build-firecracker-binary.yml`,
+  `.github/scripts/setup-musl-toolchain.sh`,
   `.github/workflows/send_release_notification.yml`
 
 The fork's build and release workflow, plus a guard that skips upstream's
 release Slack notification outside the upstream repository (its secret does not
-exist here).
+exist here). The jobs run on plain Ubuntu runners with the toolchain installed
+by the setup script, not in the `fcuvm` image: anonymous ECR Public pulls fail
+with "Data limit exceeded" on GitHub's shared runner IPs.
 
 **Drop condition.** Never, while this fork ships its own binaries.
 
@@ -115,6 +118,7 @@ exist here).
 
 1. Branch `fork/vX.Y.Z` from the upstream tag and cherry-pick the patches above
    that do not meet their drop condition.
-1. Update the `DEVCTR_IMAGE` tag in the workflow to match `tools/devtool`.
+1. Sync `.github/scripts/setup-musl-toolchain.sh` with `tools/devctr/Dockerfile`
+   (notably `LIBSECCOMP_VER`).
 1. Check `SNAPSHOT_VERSION`; if the major changed, plan a snapshot rebuild.
 1. Update this file, tag `vX.Y.Z-fork.1`.

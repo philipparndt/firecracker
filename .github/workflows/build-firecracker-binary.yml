@@ -6,9 +6,11 @@ name: build-firecracker-binary
 # binaries as a GitHub release, which is what deployments should consume:
 # workflow artifacts expire, release assets do not.
 #
-# Runs in firecracker's own devtool container (fcuvm), which already has the
-# musl + aws-lc-sys build toolchain the .cargo/config expects. Keep the image
-# tag in sync with DEVCTR_IMAGE_TAG in tools/devtool.
+# Runs directly on Ubuntu 24.04 runners, with the musl toolchain installed by
+# .github/scripts/setup-musl-toolchain.sh (the relevant subset of
+# tools/devctr/Dockerfile). It does not use the fcuvm devtool image: anonymous
+# pulls from ECR Public fail with "Data limit exceeded" on GitHub's shared
+# runner IPs. Keep the script's LIBSECCOMP_VER in sync with the Dockerfile.
 
 on:
   workflow_dispatch:
@@ -19,18 +21,10 @@ on:
 permissions:
   contents: read
 
-env:
-  DEVCTR_IMAGE: public.ecr.aws/firecracker/fcuvm:v93
-
 jobs:
   # Unit tests for the fork's local patches, on the production libc (musl).
   unit-test:
-    runs-on: ubuntu-latest
-    container:
-      image: public.ecr.aws/firecracker/fcuvm:v93
-      # Docker's default seccomp profile blocks io_uring_setup, which the
-      # Async block engine tests need.
-      options: --security-opt seccomp=unconfined
+    runs-on: ubuntu-24.04
     env:
       # Like upstream's test_unittests: several tests assert on shared
       # metrics and are not safe to run in parallel.
@@ -38,8 +32,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Trust the checkout dir (container runs as root)
-        run: git config --global --add safe.directory '*'
+      - name: Install musl toolchain
+        run: .github/scripts/setup-musl-toolchain.sh
 
       - name: Run signal handler, block device and logger unit tests
         run: |
@@ -51,21 +45,18 @@ jobs:
       matrix:
         include:
           - arch: x86_64
-            runner: ubuntu-latest
+            runner: ubuntu-24.04
           - arch: aarch64
             runner: ubuntu-24.04-arm
     runs-on: ${{ matrix.runner }}
-    container:
-      image: public.ecr.aws/firecracker/fcuvm:v93
     steps:
       - uses: actions/checkout@v4
 
-      - name: Trust the checkout dir (container runs as root)
-        run: git config --global --add safe.directory '*'
+      - name: Install musl toolchain
+        run: .github/scripts/setup-musl-toolchain.sh
 
       - name: Build firecracker + jailer (release, ${{ matrix.arch }}-unknown-linux-musl)
         run: |
-          rustup show
           # --workspace: jailer is not in the workspace's default-members.
           cargo build --release --workspace \
             --target ${{ matrix.arch }}-unknown-linux-musl \
@@ -105,7 +96,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           ls -l out
-          gh release create "$GITHUB_REF_NAME" out/* \
-            --repo "$GITHUB_REPOSITORY" \
-            --title "$GITHUB_REF_NAME" \
-            --notes "Fork build of upstream firecracker with the local patches listed in FORK-PATCHES.md at $GITHUB_SHA. Static musl binaries for x86_64 and aarch64."
+          # Re-runs of a tag replace the assets of the existing release.
+          if gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" out/* --repo "$GITHUB_REPOSITORY" --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" out/* \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$GITHUB_REF_NAME" \
+              --notes "Fork build of upstream firecracker with the local patches listed in FORK-PATCHES.md at $GITHUB_SHA. Static musl binaries for x86_64 and aarch64."
+          fi
